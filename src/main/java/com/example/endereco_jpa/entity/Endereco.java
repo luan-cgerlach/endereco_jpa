@@ -15,9 +15,9 @@ import lombok.NoArgsConstructor;
 public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String rua;
-    private String cidade;
-    private String estado;
-    private String cep;
+    private Long ID;
+    private String RUA;
+    private String CIDADE;
+    private String ESTADO;
+    private String CEP;
 }

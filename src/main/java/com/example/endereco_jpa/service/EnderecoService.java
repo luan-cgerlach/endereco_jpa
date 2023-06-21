@@ -21,6 +21,10 @@ public class EnderecoService {
         return enderecoRepository.findById(id).get();
     }
 
+    public List<Endereco> buscarEnderecoPorCidade(String cidade) {
+        return enderecoRepository.findByCidade(cidade);
+    }
+
     public List<Endereco> buscarEnderecos(){
         return enderecoRepository.findAll();
     }
