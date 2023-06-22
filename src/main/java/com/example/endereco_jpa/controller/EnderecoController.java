@@ -32,22 +32,22 @@ public class EnderecoController {
         }
     }
     @GetMapping("rua/{rua}")
-    public ResponseEntity<Endereco> buscarEnderecoPorRua(@PathVariable String rua){
-        Endereco endereco = enderecoService.buscarEnderecoPorRua(rua);
-        if(endereco==null){
+    public ResponseEntity<List<Endereco>> buscarEnderecoPorRua(@PathVariable String rua){
+        List<Endereco> enderecos = enderecoService.buscarEnderecoPorRua(rua);
+        if(enderecos.isEmpty()){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Endereço não encontrado");
         }else{
-            return ResponseEntity.status(HttpStatus.OK).body(endereco);
+            return ResponseEntity.status(HttpStatus.OK).body(enderecos);
         }
     }
 
     @GetMapping("cep/{cep}")
-    public ResponseEntity<Endereco> buscarEnderecoPorCep(@PathVariable String cep){
-        Endereco endereco = enderecoService.buscarEnderecoPorCep(cep);
-        if(endereco==null){
+    public ResponseEntity<List<Endereco>> buscarEnderecoPorCep(@PathVariable String cep){
+        List<Endereco> enderecos = enderecoService.buscarEnderecoPorCep(cep);
+        if(enderecos.isEmpty()){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Endereço não encontrado");
         }else{
-            return ResponseEntity.status(HttpStatus.OK).body(endereco);
+            return ResponseEntity.status(HttpStatus.OK).body(enderecos);
         }
     }
 
