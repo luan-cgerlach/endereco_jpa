@@ -25,6 +25,15 @@ public class EnderecoService {
         return enderecoRepository.findByCidade(cidade);
     }
 
+    public Endereco buscarEnderecoPorCep(String cep) {
+        return enderecoRepository.findByCEP(cep);
+    }
+
+    public Endereco buscarEnderecoPorRua(String rua) {
+        return enderecoRepository.findByRUA(rua);
+    }
+
+
     public List<Endereco> buscarEnderecos(){
         return enderecoRepository.findAll();
     }

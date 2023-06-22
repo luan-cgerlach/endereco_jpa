@@ -13,4 +13,8 @@ public interface EnderecoRepository extends JpaRepository<Endereco, Long> {
 
     @Query("SELECT e FROM Endereco e WHERE e.CIDADE = :cidade")
     List<Endereco> findByCidade(@Param("cidade") String cidade);
+
+    Endereco findByCEP(String cep);
+
+    Endereco findByRUA(String rua);
 }
