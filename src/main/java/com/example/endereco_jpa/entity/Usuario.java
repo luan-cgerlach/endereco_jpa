@@ -2,28 +2,26 @@ package com.example.endereco_jpa.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
-import java.util.Map;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Endereco {
+public class Usuario {
     @Id
     private Long id;
-    private String rua;
-    private String cidade;
-    private String entado;
-    private String cep;
+    private String nome;
+
+
 
     //@JsonIgnoreProperties
-    @JsonIgnore
-    @OneToMany(mappedBy = "endereco")
-    private List<Usuario> usuarios;
+    @ManyToOne
+    private Endereco endereco;
 }

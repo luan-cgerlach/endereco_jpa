@@ -26,13 +26,12 @@ public class EnderecoService {
     }
 
     public List<Endereco> buscarEnderecoPorCep(String cep) {
-        return enderecoRepository.findAllByCEP(cep);
+        return enderecoRepository.findAllByCep(cep);
     }
 
     public List<Endereco> buscarEnderecoPorRua(String rua) {
-        return enderecoRepository.findAllByRUA(rua);
+        return enderecoRepository.findAllByRua(rua);
     }
-
 
     public List<Endereco> buscarEnderecos(){
         return enderecoRepository.findAll();
